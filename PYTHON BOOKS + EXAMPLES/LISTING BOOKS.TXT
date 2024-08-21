@@ -1,0 +1,39 @@
+Python Programming on Win32 + code
+Beginning Game Development With Python And Pygame From Novice To Professional
+Core Python Programming 2nd Ed.
+MySQL-python-1.2.0
+Core Python
+Programming Python 2nd Ed.+ examples
+Python & TKinter Programming
+Python v1.3.13.S60 3rd Ed.
+Thinking In Python (PDF, HTML & code)
+Data Structures And Algorithms With Object-Oriented Design Patterns In Python
+Dive Into Python
+Python Programming with the Java Class Libraries - Jython
+Text processing in python
+Computer Programming - Python - Programming Language Tutorial (2002 Van Rossum)
+Core Python Programming
+Game Programming with Python, Lua and Ruby
+GUI Programming with Python - QT Edition
+How to Think Like a Computer Scientist, Python Edition
+Making Use Of Python
+Programming Python 3rd Ed.
+Python Pocket Reference 2nd Ed.
+Python & XML
+Perl To Python Migration 2001
+Python 2.1 Bible
+Python-2.4.1
+Python Developers Handbook
+Python Essential Reference, 2nd Ed.
+Python - How to Program
+Python in a Nutshell, 2nd Edition
+Python Programming for the Absolute Beginner
+Python Programming Tutorial
+Python Scripting For Computational Science
+Python Standard Library
+Python Visual Quickstart Guide
+XML Processing with Python
+Rapid Python Web Application Development
+Python Phrasebook - Essential Code And Commands
+Unix - GUI Programming with Python
+wxPython in Action
