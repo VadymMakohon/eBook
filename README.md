@@ -1,5 +1,5 @@
 # 📚 Programming eBooks Collection
-Welcome to the Programming eBooks Collection repository! This repository is a curated collection of eBooks covering a variety of popular programming languages, including Java, Python, JavaScript, SQL, PHP and C#. Whether you're a beginner looking to learn a new language or an experienced developer seeking to deepen your knowledge, these resources are here to help you on your journey.
+Welcome to the Programming eBooks Collection repository! This repository is a curated collection of eBooks covering a variety of popular programming languages, including Java, Vue, Python, JavaScript, SQL, PHP and C#. Whether you're a beginner looking to learn a new language or an experienced developer seeking to deepen your knowledge, these resources are here to help you on your journey.
 
 ## 🔍 How to Use This Repository
 1. Clone or Download
