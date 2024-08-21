@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  <link rel="stylesheet" href="../public/styles.css" />
+  <title>Custom Events</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="notes-section">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <strong>Notes</strong>
+          <div v-for="note in notes" class="notes">
+            {{ note }}
+          </div>
+        </div>
+        <div class="column has-text-centered">
+          <strong>Timestamp</strong>
+          <div v-for="timestamp in timestamps" class="timestamps">
+            {{ timestamp }}
+          </div>
+        </div>
+      </div>
+      <input-component
+        @add-note="addNote" :placeholder="placeholder"></input-component>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>

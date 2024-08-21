@@ -1,0 +1,42 @@
+<!-- A simple top down selector engine. -->
+
+<div>
+  <div>
+    <span>Span</span>
+  </div>
+</div>
+<script>
+window.onload = function(){
+  function find(selector, root){
+    root = root || document;
+    
+    var parts = selector.split(" "),
+      query = parts[0],
+      rest = parts.slice(1).join(" "),
+      elems = root.getElementsByTagName( query ),
+      results = [];
+    
+    for ( var i = 0; i < elems.length; i++ ) {
+      if ( rest ) {
+        results = results.concat( find(rest, elems[i]) );
+      } else {
+        results.push( elems[i] );
+      }
+    }
+    
+    return results;
+  }
+  
+  var divs = find("div");
+  assert( divs.length === 2, "Correct number of divs found." );
+  
+  var divs = find("div", document.body);
+  assert( divs.length === 2, "Correct number of divs found in body." );
+  
+  var divs = find("body div");
+  assert( divs.length === 2, "Correct number of divs found in body." );
+  
+  var spans = find("div span");
+  assert( spans.length === 2, "A duplicate span was found." );
+};
+</script>

@@ -1,0 +1,20 @@
+<!-- Getting the text contents of an element. -->
+
+<div id="test"><b>Hello</b>, I'm a ninja!</div>
+<div id="test2"></div>
+<script>
+window.onload = function(){
+  function getText( elem ) {
+    var text = "";
+    
+    for ( var i = 0, l = elem.childNodes.length; i < l; i++ ) {
+      var cur = elem.childNodes[i];
+      
+      // A text node has a nodeType === 3
+      if ( cur.nodeType === 3 )
+        text += cur.nodeValue;
+      
+      // If it's an element we need to recurse further
+      else if ( cur.nodeType === 1 )
+        text += getText( cur );
+    }

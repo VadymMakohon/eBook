@@ -1,0 +1,13 @@
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\bin\Debug\AddingMachine.exe.config
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\bin\Debug\AddingMachine.exe
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\bin\Debug\AddingMachine.pdb
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\AddingMachine.csprojResolveAssemblyReference.cache
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\MainWindow.baml
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\MainWindow.g.cs
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\App.g.cs
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\AddingMachine_MarkupCompile.cache
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\AddingMachine.g.resources
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\AddingMachine.Properties.Resources.resources
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\AddingMachine.csproj.GenerateResource.Cache
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\AddingMachine.exe
+C:\Users\Rob\OneDrive\2014-2015 Year\Yellow Book Korean Edition\Code Samples\AddingMachine\AddingMachine\obj\Debug\AddingMachine.pdb

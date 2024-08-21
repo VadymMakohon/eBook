@@ -1,0 +1,45 @@
+<!-- Using a central timer control to manage multiple animations. -->
+
+<div id="box" style="position:absolute;">Hello!</div>
+<script>
+var timers = {
+  timerID: 0,
+  timers: [],
+  start: function(){
+    if ( this.timerID )
+      return;
+    
+    (function(){
+      for ( var i = 0; i < timers.timers.length; i++ )
+        if ( timers.timers[i]() === false ) {
+          timers.timers.splice(i, 1);
+          i--;
+        }
+      timers.timerID = setTimeout( arguments.callee, 0 );
+    })();
+  },
+  stop: function(){
+    clearTimeout( this.timerID );
+    this.timerID = 0;
+  },
+  add: function(fn){
+    this.timers.push( fn );
+    this.start();
+  }
+};
+
+var box = document.getElementById("box"), left = 0, top = 20;
+
+timers.add(function(){
+  box.style.left = left + "px";
+  if ( ++left > 50 )
+    return false;
+});
+
+timers.add(function(){
+  box.style.top = top + "px";
+  top += 2;
+  if ( top > 120 )
+    return false;
+});
+</script>

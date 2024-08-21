@@ -1,0 +1,17 @@
+<!-- Adding a new method to all HTML elements via the HTMLElement prototype. -->
+
+<div id="a">I'm going to be removed.</div>
+<div id="b">Me too!</div>
+<script>
+HTMLElement.prototype.remove = function(){
+  if ( this.parentNode )
+    this.parentNode.removeChild( this );
+};
+
+// Old way
+var a = document.getElementById("a");
+a.parentNode.removeChild( a );
+
+// New way
+document.getElementById("b").remove();
+</script>

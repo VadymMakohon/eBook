@@ -1,0 +1,45 @@
+<!-- Simple methods for binding and unbinding an event handler while preserving the context. Also a proxy method for changing the context for any given function. -->
+
+<script>
+(function(){  
+  if ( document.addEventListener ) {
+    this.addEvent = function( elem, type, fn ) {
+      elem.addEventListener( type, fn, false );
+      return fn;
+    };
+    
+    this.removeEvent = function( elem, type, fn ) {
+      elem.removeEventListener( type, fn, false );
+    };
+    
+  } else if ( document.attachEvent ) {
+    this.addEvent = function( elem, type, fn ) {
+      var bound = function() {
+        return fn.apply( elem, arguments );
+      };
+      
+      elem.attachEvent( "on" + type, bound );
+      return bound;
+    };
+  
+    this.removeEvent = function( elem, type, fn ) {
+      elem.detachEvent( "on" + type, fn );
+    };
+  }
+})();
+
+addEvent( window, "load", function() {
+  var li = document.getElementsByTagName("li");
+  for ( var i = 0; i < li.length; i++ ) (function(elem){
+    var handler = addEvent( elem, "click", function() {
+      this.style.backgroundColor = "green";
+      removeEvent( elem, "click", handler );
+    });
+  })(li[i]);
+});
+</script>
+<ul>
+<li>Click</li>
+<li>me</li>
+<li>once.</li>
+</ul>

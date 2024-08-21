@@ -1,0 +1,16 @@
+<!-- Creating a script tag type that executes only after the page has already loaded. -->
+
+<script>
+window.onload = function(){
+  var scripts = document.getElementsByTagName("script");
+  for ( var i = 0; i < scripts.length; i++ ) {
+    if ( scripts[i].type == "onload" ) {
+      // You may want to use a globalEval implementation here
+      eval( scripts[i].innerHTML );
+    }
+  }
+};
+</script>
+<script type="onload">
+  ok(true, "I will only execute after the page has loaded.");
+</script>

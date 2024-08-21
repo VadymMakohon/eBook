@@ -1,0 +1,37 @@
+<!-- A function for accessing computed style information using the W3C-compatible API or Internet Explorer's <code>currentStyle</code>. -->
+
+<div style="color:red;">text</div>
+<style>div { font-size: 10px; display: inline; }</style>
+<script>
+function computedStyle( elem, name ) {
+  var defaultView = elem.ownerDocument.defaultView;
+  
+  if ( defaultView && defaultView.getComputedStyle ) {
+    var computedStyle = defaultView.getComputedStyle( elem, null );
+    
+    if ( computedStyle ) {
+      name = name.replace(/([A-Z])/g, "-$1").toLowerCase();
+      return computedStyle.getPropertyValue( name );
+    }
+  } else if ( elem.currentStyle ) {
+    name = name.replace(/-([a-z])/ig, function(all, letter){
+      return letter.toUpperCase();
+    });
+    
+    return elem.currentStyle[ name ];
+  }
+}
+
+window.onload = function(){
+  var div = document.getElementsByTagName("div")[0];
+  
+  // Will alert '10px'
+  alert( computedStyle( div, "font-size" ) );
+  
+  // Will alert '10px'
+  alert( computedStyle( div, "fontSize" ) );
+  
+  // Will alert 'inline'
+  alert( computedStyle( div, "display" ) );
+};
+</script>

@@ -1,0 +1,56 @@
+<!-- An example of retrieving the opacity style attribute across browsers. -->
+
+<html>
+<head>
+<title>Opacity Style Test</title>
+<script>
+(function(){
+  var div = document.createElement("div");
+  div.innerHTML = "<div style='opacity:.5;'></div>";
+  
+  // If .5 becomes 0.5, we assume the browser knows how
+  // to handle native opacity
+  var native = div.firstChild.style.opacity === "0.5";
+  
+  this.opacityStyle = function(elem, value) {
+    if ( typeof value !== "undefined" ) {
+      if ( native ) {
+        elem.style.opacity = value;
+      } else {
+        // .filter may not exist
+        elem.style.filter = (elem.style.filter || "")
+          // Need to replace any existing alpha
+          .replace( /alpha\([^)]*\)/, "" ) +
+          // If we have a number, set that as the value (0-100)
+          (parseFloat( value ) + '' == "NaN" ?
+            "" :
+            "alpha(opacity=" + value * 100 + ")");
+      }
+      
+      elem.style[ floatName ] = value;
+    }
+    
+    if ( native ) {
+      return elem.style.opacity;
+    } else {
+      // Only attempt to get a value if one might exist
+      var match = elem.style.filter.match(/opacity=([^)]*)/);
+      return match ?
+        (parseFloat( match[1] ) / 100) + "" :
+        "";
+    }
+  };
+})();
+
+window.onload = function(){
+  var div = document.getElementById("div");
+  
+  // Alerts out '0.5'
+  alert( opacityStyle( div ) );
+};
+</script>
+</head>
+<body>
+  <div style="opacity:0.5;filter:alpha(opacity=50);"></div>
+</body>
+</html>

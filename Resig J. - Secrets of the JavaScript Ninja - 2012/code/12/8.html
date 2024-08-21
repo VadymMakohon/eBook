@@ -1,0 +1,30 @@
+<!-- Getting access to the original values of the form element attributes. -->
+
+<html>
+<head>
+<title>Expansion Test</title>
+<script>
+function attr( elem, name ) {
+  if ( elem.nodeName.toUpperCase() === "form" && 
+       elem.getAttributeNode(name) )
+    return elem.getAttributeNode(name).nodeValue;
+  else
+    return elem.getAttribute(name);
+}
+
+window.onload = function(){
+  var form = document.getElementById("form");
+  
+  // Both are 'form' and '/' accordingly
+  alert( attr(form, "id") );
+  alert( attr(form, "action") );
+};
+</script>
+</head>
+<body>
+<form id="form" action="/">
+  <input type="text" id="id"/>
+  <input type="text" name="action"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- A case where form elements expand on to a form overwriting the original ID and action attributes. -->
+
+<html>
+<head>
+<title>Expansion Test</title>
+<script>
+window.onload = function(){
+  var form = document.getElementById("form");
+  
+  // Both are DOM elements in Internet Explorer and Opera
+  alert( form.id );
+  alert( form.action );
+  
+  // Both are DOM elements in Internet Explorer
+  alert( form.getAttribute("id") );
+  alert( form.getAttribute("action") );
+};
+</script>
+</head>
+<body>
+<form id="form" action="/">
+  <input type="text" id="id"/>
+  <input type="text" name="action"/>
+</form>
+</body>
+</html>

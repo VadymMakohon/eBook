@@ -1,0 +1,16 @@
+<!-- Normalizing the <code>nodeName</code> of an element in order to simplify node name checks. -->
+
+<div></div>
+<ul></ul>
+<script>
+window.onload = function(){
+  var all = document.getElementsByTagName("*")[0];
+  
+  for ( var i = 0; i < all.length; i++ ) {
+    var nodeName = all[i].nodeName.toLowerCase();
+    if ( nodeName === "div" || nodeName === "ul" ) {
+      all[i].className = "found";
+    }
+  }
+};
+</script>

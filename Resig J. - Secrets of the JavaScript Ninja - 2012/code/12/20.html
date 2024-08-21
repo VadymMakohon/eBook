@@ -1,0 +1,63 @@
+<!-- An example of getting the height and width of an element (both visible and invisible). -->
+
+<html>
+<head>
+  <title>Height/Width Test</title>
+  <script>
+  (function(){
+  
+    this.height = function( elem ) {
+      return this.offsetHeight ||
+        swap( elem, props, function(){
+          return elem.offsetHeight;
+        });
+    };
+    
+    this.width = function( elem ) {
+      return this.offsetWidth ||
+        swap( elem, props, function(){
+          return elem.offsetWidth;
+        });
+    };
+    
+    var props = {
+      position: "absolute",
+      visibility: "hidden",
+      display: "block"
+    };
+    
+    function swap( elem, options, callback ) {
+      var old = {}, ret;
+      // Remember the old values, and insert the new ones
+      for ( var name in options ) {
+        old[ name ] = elem.style[ name ];
+        elem.style[ name ] = options[ name ];
+      }
+      
+      ret = callback();
+      
+      // Revert the old values
+      for ( var name in options ) {
+        elem.style[ name ] = old[ name ];
+      }
+      
+      return ret;
+    }
+    
+  })();
+  
+  window.onload = function(){
+    var block = document.getElementById("block");
+    var none = document.getElementById("none");
+    
+    // Both will alert out the same values
+    alert( width(block) + " " + height(block) );
+    alert( width(none) + " " + height(none) );
+  };
+  </script>
+</head>
+<body>
+  <div id="block">Test</div>
+  <div id="none" style="display:none;">Test</div>
+</body>
+</html>

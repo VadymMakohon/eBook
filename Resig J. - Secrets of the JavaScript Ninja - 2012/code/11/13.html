@@ -1,0 +1,21 @@
+<!-- Setting the text contents of an element. -->
+
+<div id="test"><b>Hello</b>, I'm a ninja!</div>
+<div id="test2"></div>
+<script>
+window.onload = function(){
+  var b = document.getElementById("test");
+  
+  // Replace with your empty() method of choice
+  while ( b.firstChild )
+    b.removeChild( b.firstChild );
+  
+  // Inject the escaped text node
+  b.appendChild( document.createTextNode( "Some new text" ) );
+  
+  var text = b.textContent || b.innerText;
+  
+  assert( text === "Some new text", "Set a new text value." );
+  assert( b.childNodes.length === 1, "Only one text nodes exists now." );
+};
+</script>

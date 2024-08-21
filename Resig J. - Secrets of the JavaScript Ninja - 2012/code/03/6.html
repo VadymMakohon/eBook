@@ -1,0 +1,21 @@
+<!-- An alternative means of enforcing function context when binding a function. -->
+
+<button id="test">Click Me!</button>
+<script>
+function bind(context, name){
+  return function(){
+    return context[name].apply(context, arguments);
+  };
+}
+
+var Button = {
+  click: function(){
+    this.clicked = true;
+  }
+};
+
+var elem = document.getElementById("test");
+elem.addEventListener("click", bind(Button, "click"), false);
+trigger( elem, "click" );
+assert( Button.clicked, "The clicked property was set on our object" );
+</script>

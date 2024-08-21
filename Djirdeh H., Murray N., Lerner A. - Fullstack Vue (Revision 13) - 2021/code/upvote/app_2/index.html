@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+  <link rel="stylesheet"
+    href="../public/styles.css" />
+</head>
+
+<body>
+  <div id="app">
+    <h2 class="title has-text-centered dividing-header">UpVote!</h2>
+
+    <div class="section">
+      <article class="media">
+        <figure class="media-left">
+          <img class="image is-64x64"
+            v-bind:src="submissions[0].submissionImage">
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>
+                <a v-bind:href="submissions[0].url" class="has-text-info">
+                  {{ submissions[0].title }}
+                </a>
+                <span class="tag is-small">#{{ submissions[0].id }}</span>
+              </strong>
+              <br>
+                {{ submissions[0].description }}
+              <br>
+              <small class="is-size-7">
+                Submitted by:
+                <img class="image is-24x24"
+                  v-bind:src="submissions[0].avatar">
+              </small>
+            </p>
+          </div>
+        </div>
+        <div class="media-right">
+          <span class="icon is-small">
+            <i class="fa fa-chevron-up"></i>
+            <strong class="has-text-info">{{ submissions[0].votes }}</strong>
+          </span>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./seed.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>

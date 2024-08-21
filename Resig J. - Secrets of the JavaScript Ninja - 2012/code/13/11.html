@@ -1,0 +1,66 @@
+<!-- An example of implementing a hover event using the event detection code from Listing 13-8. -->
+
+<div>Hover <strong>over</strong> me!</div>
+<style>.over { background: yellow; }</style>
+<script>
+(function(){
+  if ( isEventSupported( "mouseenter" ) ) {
+    this.hover = function( elem, fn ) {
+      addEvent( elem, "mouseenter", function(){
+        fn.call( elem, "mouseenter" );
+      });
+    
+      addEvent( elem, "mouseleave", function(){
+        fn.call( elem, "mouseleave" );
+      });
+    };
+    
+  } else {
+    this.hover = function( elem, fn ) {
+      addEvent( elem, "mouseover", function(e){
+        withinElement( this, e, "mouseenter", fn );
+      });
+      
+      addEvent( elem, "mouseout", function(e){
+        withinElement( this, e, "mouseleave", fn );
+      });
+    };
+  }
+  
+  function withinElement( elem, event, type, handle ) {
+    // Check if mouse(over|out) are still
+    // within the same parent element
+    var parent = event.relatedTarget;
+    
+    // Traverse up the tree
+    while ( parent && parent != elem ) {
+      // Firefox sometimes assigns relatedTarget a XUL element
+      // which we cannot access the parentNode property of
+      try {
+        parent = parent.parentNode;
+        
+      // assuming we've left the element since 
+      // we most likely mousedover a xul element
+      } catch(e) { break; }
+    }
+  
+    if ( parent != elem ) {
+      // handle event if we actually just 
+      // moused on to a non sub-element
+      handle.call( elem, type );
+    }
+  }
+})();
+
+window.onload = function(){
+  var div = document.getElementsByTagName("div")[0];
+  
+  hover( div, function(type){
+    if ( type === "mouseenter" ) {
+      this.className = "over";
+    } else {
+      this.className = "";
+    }
+  });
+};
+</script>

@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "plugin:vue/essential",
+    "eslint:recommended",
+    "@vue/typescript"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-return-assign": "off",
+    "comma-dangle": "off",
+    "quotes": "off",
+    "semi": "off",
+    "arrow-body-style": "off",
+    "max-len": [
+      "error",
+      { "code": 100 }
+    ],
+    "@typescript-eslint/no-unused-vars": "error"
+  }
+}

@@ -1,0 +1,50 @@
+<!-- Create a method for getting and setting the style attribute string across browsers. (References code from Listing 12-3.) -->
+
+<html>
+<head>
+<title>Style Attribute Test</title>
+<script>
+(function(){
+  // Create a dummy div to test access the style information
+  var div = document.createElement("div");
+  div.innerHTML = '<b style="color:red;"></b>';
+  
+  // Get the style information from getAttribute
+  // (IE uses .cssText insted)
+  var hasStyle = /red/.test( div.firstChild.getAttribute("style") );
+  
+  this.styleAttr = function(elem, value) {
+    var hasValue = typeof value !== "undefined";
+    
+    // Use the isXML method from Listing 12-3
+    if ( !hasStyle && !isXML(elem) ) {
+      if ( hasValue ) {
+        elem.style.cssText = value + "";
+      }
+      
+      return elem.style.cssText;
+    } else {
+      if ( hasValue ) {
+        elem.setAttribute("style", value);
+      }
+      
+      return elem.getAttribute("style");
+    }
+  };
+})();
+
+window.onload = function(){
+  var a = document.getElementById("a");
+  
+  // Fails in Internet Explorer
+  alert( a.getAttribute("style") );
+  
+  // Alerts out "color:red;"
+  alert( styleAttr( a ) );
+};
+</script>
+</head>
+<body>
+  <a id="a" href="/" style="color:red;"></a>
+</body>
+</html>

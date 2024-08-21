@@ -1,0 +1,20 @@
+<!-- An example of where the properties on an element's style property come from. -->
+
+<div style="color:red;">text</div>
+<style>div { font-size: 10px; }</style>
+<script>
+window.onload = function(){
+  var div = document.getElementsByTagName("div")[0];
+  
+  // Will alert 'red' or '#ff0000' (in Opera)
+  alert( div.style.color );
+  
+  // Will be an empty alert
+  alert( div.style.fontSize );
+  
+  div.style.backgroundColor = "blue";
+  
+  // Will alert 'blue' or '#0000ff' (in Opera)
+  alert( div.style.backgroundColor );
+};
+</script>

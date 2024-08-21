@@ -1,0 +1,20 @@
+﻿<Window x:Class="AddingMachine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Adding Machine" TextAlignment="Center" 
+      Margin="0,10" FontSize="18"></TextBlock>
+            <TextBox Name="firstNumberTextBox" Width="100" 
+      Margin="0,10" TextAlignment="Center"></TextBox>
+            <TextBlock Text="+" TextAlignment="Center" Margin="0,10"></TextBlock>
+            <TextBox Name="secondNumberTextBox" Width="100"
+      Margin="0,10" TextAlignment="Center"></TextBox>
+            <Button Content="Equals" Name="equalsButton" HorizontalAlignment="Center" 
+      Margin="0,10" Click="equalsButton_Click"></Button>
+            <TextBlock Name="resultTextBlock" Text="" TextAlignment="Center"
+  Margin="0,10"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

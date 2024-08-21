@@ -1,0 +1,39 @@
+<!-- A method for getting and setting pixel-based style attributes using numbers. -->
+
+<html>
+<head>
+<title>Pixel Style Test</title>
+<script>
+(function(){
+  var check = /z-?index|font-?weight|opacity|zoom|line-?height/i;
+  
+  this.pxStyle = function(elem, name, value) {
+    var nopx = check.test( name );
+    
+    if ( typeof value !== "undefined" ) {
+      if ( typeof value === "number" ) {
+        value += nopx ? "" : "px";
+      }
+      elem.style[ name ] = value;
+    }
+    
+    return nopx ?
+      elem.style[ name ] :
+      parseFloat( elem.style[ name ] );
+  };
+})();
+
+window.onload = function(){
+  var div = document.getElementById("div");
+  
+  pxStyle( div, "top", 5 );
+  
+  // Alerts out '5'
+  alert( pxStyle( div, "left" ) );
+};
+</script>
+</head>
+<body>
+  <div style="top:10px;left:5px;"></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- An example of using traditional DOM attribute setting and an expando. -->
+
+<div></div>
+<script>
+window.onload = function(){
+  var div = document.getElementsByTagName("div")[0];
+  
+  // Set the ID
+  div.setAttribute("id", "somediv");
+  div.id = "somediv";
+};
+</script>

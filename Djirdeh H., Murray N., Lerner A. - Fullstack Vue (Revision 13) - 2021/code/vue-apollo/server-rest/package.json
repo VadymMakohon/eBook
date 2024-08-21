@@ -1,0 +1,7 @@
+{
+  "name": "node-rest-server",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node server"
+  }
+}

@@ -1,0 +1,25 @@
+<!-- Attempting to change an input element's type attribute after it has already been inserted into a document. -->
+
+<html>
+<head>
+<title>Type Attribute Test</title>
+<script>
+window.onload = function(){
+  var input = document.createElement("input");
+  input.type = "text";
+  
+  document.getElementById("form").appendChild( input );
+  
+  // Errors out in Internet Explorer
+  input.type = "hidden";
+};
+</script>
+</head>
+<body>
+<a id="a" href="/"></a>
+<form id="form" action="/">
+  <input type="text" id="id"/>
+  <input type="text" name="action"/>
+</form>
+</body>
+</html>

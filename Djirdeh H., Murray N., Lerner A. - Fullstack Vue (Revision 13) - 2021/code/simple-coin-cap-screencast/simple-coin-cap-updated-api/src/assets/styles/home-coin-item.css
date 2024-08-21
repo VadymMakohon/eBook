@@ -1,0 +1,64 @@
+.ui.segment.coin {
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  border: 0.4px solid rgba(34, 36, 38, 0.15);
+  border-bottom: 0;
+  cursor: pointer;
+}
+
+.ui.segment.coin:hover {
+  width: 100.5%;
+  margin: 0 -5px;
+
+  .segment__primary {
+    color: #ffa226 !important;
+  }
+}
+
+.ui.segment .ui.grid {
+  height: 60px;
+  align-items: center;
+}
+
+.segment__bold {
+  color: #000;
+}
+
+.segment__primary {
+  color: #1153fc;
+}
+
+.segment__positive {
+  color: #4bcb52;
+}
+
+.segment__negative{
+  color: #ff4641;
+}
+
+.segment__crypto-logo {
+  height: 15px;
+  position: relative;
+  top: 2px;
+}
+
+.ui.segment.non-desktop {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .ui.segment.desktop {
+    display: none;
+  }
+
+  .ui.segment.non-desktop {
+    display: block;
+  }
+
+  .ui.segment.coin {
+    font-size: 13.0px;
+  }
+}

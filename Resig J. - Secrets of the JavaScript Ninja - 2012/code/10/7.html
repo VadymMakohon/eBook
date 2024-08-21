@@ -1,0 +1,36 @@
+<!-- Finding the unique elements in an array. -->
+
+<div id="test">
+  <b>Hello</b>, I'm a ninja!
+</div>
+<div id="test2"></div>
+<script>
+(function(){
+  var run = 0;
+  
+  this.unique = function( array ) {
+    var ret = [];
+    
+    run++;
+
+    for ( var i = 0, length = array.length; i < length; i++ ) {
+      var elem = array[ i ];
+
+      if ( elem.uniqueID !== run ) {
+        elem.uniqueID = run;
+        ret.push( array[ i ] );
+      }
+    }
+
+    return ret;
+  };
+})();
+
+window.onload = function(){
+  var divs = unique( document.getElementsByTagName("div") );
+  assert( divs.length === 2, "No duplicates removed." );
+  
+  var body = unique( [document.body, document.body] );
+  assert( body.length === 1, "body duplicate removed." );
+};
+</script>

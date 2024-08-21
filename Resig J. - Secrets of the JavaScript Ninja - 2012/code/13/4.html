@@ -1,0 +1,15 @@
+<!-- Combining the fix element method from Listing 13-2 and the data store from Listing 13-3 we can now build a new way to add and remove events. -->
+
+<script>
+(function(){
+var guid = 1;
+
+this.addEvent = function( elem, type, fn ) {
+  var data = getData( elem ), handlers;
+  
+  // We only need to generate one handler per element
+  if ( !data.handler ) {
+    // Our new meta-handler that fixes
+    // the event object and the context
+    data.handler = function( event ) {
+      event = fixEvent( event );

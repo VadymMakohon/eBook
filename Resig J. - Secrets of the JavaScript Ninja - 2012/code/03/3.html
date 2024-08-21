@@ -1,0 +1,16 @@
+<!-- Using a closure from a callback in an Ajax request. -->
+
+<div></div>
+<script src="jquery.js"></script>
+<script>
+var elem = jQuery("div");
+elem.html("Loading...");
+
+jQuery.ajax({
+  url: "test.html",
+  success: function(html){
+    assert( elem, "The element to append to, via a closure." );
+    elem.html( html );
+  }
+});
+</script>

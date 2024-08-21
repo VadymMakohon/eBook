@@ -1,0 +1,12 @@
+<!-- A problematic piece of code in which the iterator is not maintained in the closure. -->
+
+<div></div>
+<div></div>
+<script>
+var div = document.getElementsByTagName("div");
+for ( var i = 0; i < div.length; i++ ) {
+  div[i].addEventListener("click", function(){
+    alert( "div #" + i + " was clicked." );
+  }, false);
+}
+</script>

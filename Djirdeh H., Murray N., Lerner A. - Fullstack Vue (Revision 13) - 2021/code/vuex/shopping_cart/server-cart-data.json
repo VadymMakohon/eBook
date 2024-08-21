@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "title": "The Fullstack Hoodie",
+        "description": "Lightweight, breathable hoodie with the Fullstack Crest. Guaranteed to keep you looking fresh while warm.",
+        "price": 19.99,
+        "quantity": 2
+    }
+]

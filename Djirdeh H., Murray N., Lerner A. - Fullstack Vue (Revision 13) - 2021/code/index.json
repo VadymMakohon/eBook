@@ -1,0 +1,56 @@
+{
+  "name": "Fullstack Vue Code Directory",
+  "description": "This file is an index of the sample code",
+  "chapters": [
+    {
+      "name": "Your first Vue.js Web Application",
+      "examples": [
+        "upvote"
+      ]
+    },
+    {
+      "name": "Single-file components",
+      "examples": [
+        "calendar_app"
+      ]
+    },
+    {
+      "name": "Custom Events",
+      "examples": [
+        "custom_events"
+      ]
+    },
+    {
+      "name": "Introduction to Vuex",
+      "examples": [
+        "vuex/note_taking"
+      ]
+    },
+    {
+      "name": "Vuex and Servers",
+      "examples": [
+        "vuex/shopping_cart"
+      ]
+    },
+    {
+      "name": "Form Handling",
+      "examples": [
+        "form_handling"
+      ]
+    },
+    {
+      "name": "Routing",
+      "examples": [
+        "routing/basics",
+        "routing/shopping_cart"
+      ]
+    },
+    {
+      "name": "Unit Testing",
+      "examples": [
+        "testing/basics",
+        "testing/weather"
+      ]
+    }
+  ]
+}

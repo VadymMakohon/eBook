@@ -1,0 +1,29 @@
+<!-- A simple method for access style information of an element, handling correct camel-casing. -->
+
+<div style="color:red;font-size:10px;-moz-border-radius:3px;"></div>
+<script>
+function style(elem, name, value){
+  name = name.replace(/-([a-z])/ig, function(all, letter){
+    return letter.toUpperCase();
+  });
+  
+  if ( typeof value !== "undefined" ) {
+    elem.style[ name ] = value;
+  }
+  
+  return elem.style[ name ];
+}
+
+window.onload = function(){
+  var div = document.getElementsByTagName("div")[0];
+  
+  // Will alert 'red' or '#ff0000' (in Opera)
+  alert( style(div, "color") );
+  
+  // Will alert '10px'
+  alert( style(div, "font-size") );
+  
+  // Will alert '3px 3px 3px 3px' in Firefox
+  alert( style(div, "-moz-border-radius") );
+};
+</script>

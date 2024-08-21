@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+}
+
+#app {
+  height: inherit;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.notes-section {
+  width: 500px;
+}
+
+.columns {
+  width: 100%;
+}
+
+.notes, .timestamps {
+  padding: 5px 0px;
+}
+
+.note-count {
+  margin-top: 48px;
+}

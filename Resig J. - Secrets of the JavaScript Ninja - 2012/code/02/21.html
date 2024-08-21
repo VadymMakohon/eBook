@@ -1,0 +1,20 @@
+<!-- Simulating array-like methods. -->
+
+<input id="first"/><input id="second"/>
+<script>
+var elems = {
+  find: function(id){
+    this.add( document.getElementById(id) );
+  },
+  length: 0,
+  add: function(elem){
+    Array.prototype.push.call( this, elem );
+  }
+};
+
+elems.add("first");
+assert( elems.length == 1 && elems[0].nodeType, "Verify that we have an element in our stash" );
+
+elems.add("second");
+assert( elems.length == 2 && elems[1].nodeType, "Verify the other insertion" );
+</script>

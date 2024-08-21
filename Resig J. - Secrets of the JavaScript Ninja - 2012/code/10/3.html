@@ -1,0 +1,29 @@
+<!-- Enforcing the element root. -->
+
+<div id="test">
+  <b>Hello</b>, I'm a ninja!
+</div>
+<script>
+(function(){
+  var count = 1;
+	
+  this.rootedQuerySelectorAll = function(elem, query){
+    var oldID = elem.id;
+    elem.id = "rooted" + (count++);
+		
+    try {
+      return elem.querySelectorAll( "#" + elem.id + " " + query );
+    } catch(e){
+      throw e;
+    } finally {
+      elem.id = oldID;
+    }
+  };
+})();
+
+window.onload = function(){
+  var b = rootedQuerySelectorAll(
+    document.getElementById("test"), "div b");
+  assert( b.length === 0, "The selector is now rooted properly." );
+};
+</script>

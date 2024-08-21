@@ -1,0 +1,13 @@
+{
+  "basic": [
+    "appendix",
+    "calendar_app",
+    "custom_events",
+    "form_handling",
+    "routing",
+    "testing",
+    "upvote",
+    "vuex"
+  ],
+  "advanced": "all"
+}

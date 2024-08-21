@@ -1,0 +1,14 @@
+<!-- A naming discrepancy that occurs between browsers when using traditional DOM attribute methods. -->
+
+<div class="oldclass"></div>
+<script>
+window.onload = function(){
+  var div = document.getElementsByTagName("div")[0];
+  
+  // Set the class
+  div.setAttribute("class", "newclass");
+  
+  // The above doesn't work in IE, this does
+  div.setAttribute("className", "newclass");
+};
+</script>

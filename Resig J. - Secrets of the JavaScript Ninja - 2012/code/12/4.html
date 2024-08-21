@@ -1,0 +1,14 @@
+<!-- A way for getting the value of a custom attribute value. -->
+
+<div custom="value"></div>
+<script>
+window.onload = function(){
+  var div = document.getElementsByTagName("div")[0];
+  
+  var val = div.custom;
+  
+  if ( typeof val === "undefined" ) {
+    val = div.getAttribute("custom");
+  }
+};
+</script>

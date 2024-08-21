@@ -1,0 +1,55 @@
+.home {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.ui.grid.home {
+  margin: 0 15px;
+  width: 100%;
+}
+
+.ui.segment.banner {
+  background: linear-gradient(to bottom right,#567ff3,#1153fc);
+  color: #FFF;
+  font-size: 15px;
+  font-weight: 500;
+
+  height: 60px;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui.segment.header {
+  color: #a7a7a7;
+  background: inherit;
+  font-size: 14px;
+  font-weight: bold;
+
+  box-shadow: none;
+  border: 0;
+}
+
+.ui.segment.header.non-desktop {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .ui.segment.header.desktop {
+    display: none;
+  }
+
+  .ui.segment.header.non-desktop {
+    display: block;
+  }
+
+  .ui.grid .coin-market {
+    display: none !important;
+  }
+
+  .ui.segment.banner {
+    font-size: 12px;
+  }
+}

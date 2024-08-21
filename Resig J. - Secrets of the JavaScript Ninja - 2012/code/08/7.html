@@ -1,0 +1,27 @@
+<!-- An example implementation of evaluating code in the global scope. -->
+
+<script>
+function globalEval( data ) {
+  data = data.replace(/^\s*|\s*$/g, "");
+
+  if ( data ) {
+    var head = document.getElementsByTagName("head")[0] ||
+        document.documentElement,
+      script = document.createElement("script");
+
+    script.type = "text/javascript";
+    script.text = data;
+
+    head.appendChild( script );
+    head.removeChild( script );
+  }
+}
+
+window.onload = function(){
+  (function(){
+    globalEval("var test = 5;");
+  })();
+  
+  assert( test === 5, "The code is evaluated globally." );
+};
+</script>

@@ -1,0 +1,37 @@
+<!-- Comparing the performance difference between access attributes values through the DOM <code>getAttribute</code> method and an expando. -->
+
+<html>
+<head>
+  <title>Attribute vs. Expando Speed</title>
+</head>
+<body>
+<div id="test" class="test"></div>
+<script>
+var elem = document.getElementsByTagName("div")[0];
+
+var start = (new Date).getTime();
+expando();
+var test1 = (new Date).getTime() - start;
+
+start = (new Date).getTime();
+attr();
+var test2 = (new Date).getTime() - start;
+
+alert( test1 + " " + test2 );
+
+function expando(){
+  for ( var i = 0; i < 10000; i++ ) {
+    if ( elem.id === "test" ) {}
+    if ( elem.className === "test" ) {}
+  }
+}
+
+function attr(){
+  for ( var i = 0; i < 10000; i++ ) {
+    if ( elem.getAttribute("id") === "test" ) {}
+    if ( elem.getAttribute("class") === "test" ) {}
+  }
+}
+</script>
+</body>
+</html>

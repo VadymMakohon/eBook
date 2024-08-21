@@ -1,0 +1,43 @@
+.ui.grid.about {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  flex-direction: column;
+
+  .logo {
+    width: 100px;
+  }
+
+  .ui.header {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.content p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  text-align: left;
+}
+
+.content p a {
+  color: #1153fc;
+}
+
+.content__book-img {
+  height: 300px;
+  margin: 10px 0 20px;
+}
+
+@media screen and (max-width: 512px) {
+  .content p {
+      font-size: 0.9em;
+      text-align: center;
+  }
+
+  .content__book-img {
+      height: 100px;
+  }
+}

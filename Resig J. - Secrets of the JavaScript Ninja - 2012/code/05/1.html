@@ -1,0 +1,16 @@
+<!-- A long-running task. -->
+
+<table><tbody></tbody></table>
+<script>
+// Normal, intensive, operation
+var table = document.getElementsByTagName("tbody");
+for ( var i = 0; i < 2000; i++ ) {
+  var tr = document.createElement("tr");
+  for ( var t = 0; i < 6; i++ )
+    var td = document.createElement("td");
+    td.appendChild( document.createTextNode("" + t);
+    tr.appendChild( td );
+  }
+  table.appendChild( tr );
+}
+</script>

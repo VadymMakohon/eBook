@@ -1,0 +1,37 @@
+.ui.secondary.menu {
+  border-bottom: 1px solid #ececec;
+}
+
+.item__active {
+  background: rgba(0, 0, 0, 0.03) !important;
+}
+
+.select__logo {
+  width: 15px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+
+.select__name {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 15.5px;
+}
+
+#v-select.v-select {
+  border: #000;
+  min-width: 200px;
+}
+
+.search.link.icon {
+  background: linear-gradient(to bottom right,#567ff3,#1153fc);
+  color: #FFF;
+  width: 1.8em !important;
+  opacity: 1 !important;
+}
+
+@media screen and (max-width: 512px) {
+  .item.name {
+    display: none !important;
+  }
+}

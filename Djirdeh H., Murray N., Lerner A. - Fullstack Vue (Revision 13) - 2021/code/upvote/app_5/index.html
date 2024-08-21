@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+  <link rel="stylesheet"
+    href="../public/styles.css" />
+</head>
+
+<body>
+  <div id="app">
+    <h2 class="title has-text-centered dividing-header">UpVote!</h2>
+
+    <div class="section">
+      <article v-for="submission in sortedSubmissions"
+        v-bind:key="submission.id"
+        class="media"
+        v-bind:class="{ 'blue-border': submission.votes >= 20 }">
+        <submission-component 
+          v-bind:submission="submission"
+          v-bind:submissions="sortedSubmissions">
+        </submission-component>
+      </article>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./seed.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>

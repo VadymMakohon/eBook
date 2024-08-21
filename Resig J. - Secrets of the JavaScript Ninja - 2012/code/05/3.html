@@ -1,0 +1,23 @@
+<!-- Using a timer to break up a long-running task. -->
+
+<table><tbody></tbody></table>
+<script>
+var table = document.getElementsByTagName("tbody")[0];
+var i = 0, max = 1999;
+
+setTimeout(function(){
+  for ( var step = i + 500; i < step; i++ ) {
+    var tr = document.createElement("tr");
+    for ( var t = 0; t < 6; t++ )
+      var td = document.createElement("td");
+      td.appendChild( document.createTextNode("" + t) );
+      tr.appendChild( td );
+    }
+    table.appendChild( tr );
+  }
+  
+  if ( i < max ) {
+    setTimeout( arguments.callee, 0 );
+  }
+}, 0);
+</script>

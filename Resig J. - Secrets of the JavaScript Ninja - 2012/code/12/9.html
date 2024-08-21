@@ -1,0 +1,38 @@
+<!-- An example workaround for handling attributes that URLs in them. -->
+
+<html>
+<head>
+<title>Attribute URL Test</title>
+<script>
+(function(){
+  var div = document.createElement("div");
+  div.innerHTML = "<a href='/'></a>";
+  
+  var urlok = div.firstChild.href === "/";
+  
+  this.urlAttr = function(elem, name, value) {
+    if ( typeof value !== "undefined" ) {
+      elem.setAttribute(name, value);
+    }
+    
+    return urlok ?
+      elem[ name ] :
+      elem.getAttribute(name, 2);
+  };
+})();
+
+window.onload = function(){
+  var a = document.getElementById("a");
+  
+  // Alerts out the full URL 'http://example.com/'
+  alert( a.getAttribute("href") );
+  
+  // Alerts out the input '/'
+  alert( urlAttr( "href", a ) );
+};
+</script>
+</head>
+<body>
+  <a id="a" href="/"></a>
+</body>
+</html>

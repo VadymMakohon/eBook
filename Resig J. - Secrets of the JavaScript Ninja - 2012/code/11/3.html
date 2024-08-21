@@ -1,0 +1,34 @@
+<!-- Inserting a DOM fragment into multiple locations in the DOM, using the code from Listing 11-1 and Listing 11-4. -->
+
+<div id="test"><b>Hello</b>, I'm a ninja!</div>
+<div id="test2"></div>
+<script>
+window.onload = function(){
+  function insert(elems, args, callback){
+    if ( elems.length ) {
+      var doc = elems[0].ownerDocument || elems[0],
+        fragment = doc.createDocumentFragment(),
+        scripts = getNodes( args, doc, fragment ),
+        first = fragment.firstChild;
+    
+      if ( first ) {
+        for ( var i = 0; elems[i]; i++ ) {
+          callback.call( root(elems[i], first), 
+            i > 0 ? fragment.cloneNode(true) : fragment );
+        }
+      }
+    }
+  }
+  
+  var divs = document.getElementsByTagName("div");
+  
+  insert(divs, ["<b>Name:</b>"], function(fragment){
+    this.appendChild( fragment );
+  });
+  
+  insert(divs, ["<span>First</span> <span>Last</span>"], 
+    function(fragment){
+      this.parentNode.insertBefore( fragment, this );
+    });
+};
+</script>

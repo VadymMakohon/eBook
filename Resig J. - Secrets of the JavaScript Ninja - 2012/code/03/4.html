@@ -1,0 +1,18 @@
+<!-- Using a closure from a timer interval. -->
+
+<div id="box" style="position:absolute;">Box!</div>
+<script>
+var elem = document.getElementById("box");
+var count = 0;
+
+var timer = setInterval(function(){
+  if ( count < 100 ) {
+    elem.style.left = count + "px";
+    count++;
+  } else {
+    assert( count == 100, "Count came via a closure, accessed each step." );
+    assert( timer, "The timer reference is also via a closure." );
+    clearInterval( timer );
+  }
+}, 10);
+</script>

@@ -1,0 +1,29 @@
+<!-- Triggering a custom event across a number of elements. -->
+
+<script>
+addEvent( window, "load", function() {
+  var li = document.getElementsByTagName("li");
+  
+  for ( var i = 0; i < li.length; i++ ) {
+    addEvent( li[i], "update", function() {
+      this.innerHTML = parseInt(this.innerHTML) + 1;
+    });
+  }
+  
+  var input = document.getElementsByTagName("input")[0];
+  
+  addEvent( input, "click", function() {
+    var li = document.getElementsByTagName("li");
+  
+    for ( var i = 0; i < li.length; i++ ) {
+      triggerEvent( li[i], "update" );
+    }
+  });
+});
+</script>
+<input type="button" value="Add 1"/>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>

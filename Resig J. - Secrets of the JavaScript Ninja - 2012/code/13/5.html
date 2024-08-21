@@ -1,0 +1,23 @@
+<!-- How to use the <code>proxy</code> function to count the number of clicks. -->
+
+<script>
+var obj = {
+  count: 0,
+  method: function(){
+    this.count++;
+  }
+};
+
+addEvent( window, "load", function() {
+  // Attach the handler while enforcing the context to 'obj'
+  addEvent( document.body, "click", proxy( obj, obj.method ) );
+  
+  // Remove on right click
+  addEvent( document.body, "click", function(e) {
+    if ( e.button === 3 ) {
+      // Note that we can remove the obj.method handler no problem
+      removeEvent( document.body, "click", obj.method );
+    }
+  });
+});
+</script>

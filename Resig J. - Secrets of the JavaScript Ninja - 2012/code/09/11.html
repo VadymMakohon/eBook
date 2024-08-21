@@ -1,0 +1,23 @@
+<!-- Figure out the attribute name used to access textual element style information. -->
+
+<div id="test" style="color:red;"></div>
+<div id="test2"></div>
+<script>
+// Perform the initial attribute check
+var STYLE_NAME = (function(){
+  var div = document.createElement("div");
+  div.style.color = "red";
+  
+  if ( div.getAttribute("style") )
+    return "style";
+  
+  if ( div.getAttribute("cssText") )
+    return "cssText";
+})();
+
+// Later on:
+window.onload = function(){
+  document.getElementsById("test2").getAttribute( STYLE_NAME ) =
+      document.getElementById("test").getAttribute( STYLE_NAME );
+};
+</script>

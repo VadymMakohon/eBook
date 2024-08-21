@@ -1,0 +1,36 @@
+<!-- An example of retrieving the float style attribute across browsers. -->
+
+<html>
+<head>
+<title>Float Style Test</title>
+<script>
+(function(){
+  var div = document.createElement("div");
+  div.innerHTML = "<div style='float:left;'></div>";
+  
+  var floatName = div.firstChild.style.cssFloat === "left" ?
+    "cssFloat" :
+    "styleFloat";
+  
+  this.floatStyle = function(elem, value) {
+    if ( typeof value !== "undefined" ) {
+      elem.style[ floatName ] = value;
+    }
+    
+    return elem.style[ floatName ];
+  };
+})();
+
+window.onload = function(){
+  var div = document.getElementById("div");
+  
+  // Alerts out 'left'
+  alert( floatStyle( div ) );
+};
+</script>
+</head>
+<body>
+  <div style="float:left;"></div>
+  <a id="a" href="/"></a>
+</body>
+</html>
