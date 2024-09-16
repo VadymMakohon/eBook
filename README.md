@@ -20,7 +20,11 @@ Please ensure that any eBooks added are freely available and do not violate any 
 If you have any suggestions, issues, or questions, feel free to open an issue or reach out directly via GitHub. We appreciate your feedback!
 
 ## 📜 License
-This repository is for educational purposes only and has an MIT License
+This repository is for educational purposes and has an MIT License
+
+### Show your support
+
+Give a ⭐ if you like this website!
 
 #  Contributors <img src="https://cdn-icons-png.flaticon.com/512/5431/5431310.png" alt="Contribution Icon" width="50" height="50">
 
