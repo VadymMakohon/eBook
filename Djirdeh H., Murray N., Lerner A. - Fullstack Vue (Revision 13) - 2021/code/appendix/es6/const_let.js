@@ -1,1 +1,0 @@
-var myVariable = 5;
