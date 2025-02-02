@@ -22,10 +22,10 @@ If you have any suggestions, issues, or questions, feel free to open an issue or
 ## 📜 License
 This repository is for educational purposes and has an MIT License
 
-### Show your support
+### ⭐ Show Your Support
 
-Give a ⭐ if you like this website!
+If you like this project, give it a ⭐ on GitHub! Your support means a lot for me. 😊
 
-#  Contributors <img src="https://cdn-icons-png.flaticon.com/512/5431/5431310.png" alt="Contribution Icon" width="50" height="50">
+## 👤Contributor
 
 - [Vadym Makohon](https://github.com/VadymMakohon)
